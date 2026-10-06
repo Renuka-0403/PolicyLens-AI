@@ -261,4 +261,79 @@ Insurance Policy PDF/Image
           v
     Image Processing
           |
+          v
+      Tesseract OCR
+          |
+          v
+   Extracted Policy Text
+          |
+          v
+ Policy Information Extraction
+          |
+          +-------------------+
+          |                   |
+          v                   v
+   Policy Summary       Ask Your Policy
+          |
+          v
+   Policy Comparison
 ```
+
+## Advantages
+
+* Easy to use
+* Supports PDF and image documents
+* Reduces manual reading effort
+* Extracts important information automatically
+* Allows comparison of multiple policies
+* Provides question-based access to policy information
+* Displays the original OCR text for verification
+* Useful for understanding lengthy insurance documents
+
+## Limitations
+
+* OCR accuracy depends on the quality of the uploaded document.
+* Blurry, low-resolution, handwritten, or heavily distorted documents may produce incorrect text.
+* Some complex tables may not be extracted correctly.
+* Information may be shown as "Not detected" when the required text is unclear or missing.
+* Different insurance companies may use different document formats and terminology.
+* The application is intended as an information extraction and comparison tool and should not replace official policy documents or professional insurance advice.
+
+## Future Enhancements
+
+Possible future improvements include:
+
+* Better OCR accuracy for complex tables
+* Support for more insurance companies and policy formats
+* Automatic detection of exclusions
+* Key date extraction
+* Required document checklist
+* OCR confidence scoring
+* Page-level source references
+* Downloadable policy analysis reports
+* Improved natural-language question answering
+* Multi-language insurance document support
+* Advanced policy recommendation and comparison
+
+## Use Cases
+
+PolicyLens AI can be useful for:
+
+* Individual policyholders
+* Families comparing health insurance plans
+* Insurance document analysis
+* Students learning document AI
+* Insurance-related administrative work
+* Quickly locating important information in lengthy policy documents
+
+## Conclusion
+
+PolicyLens AI demonstrates how OCR and rule-based text analysis can be used to transform lengthy insurance documents into structured and understandable information.
+
+By combining document OCR, information extraction, question answering, and policy comparison, the application provides a practical approach to simplifying insurance policy analysis.
+
+## Disclaimer
+
+PolicyLens AI is an educational and informational project. The extracted information depends on OCR accuracy and should always be verified against the original insurance policy document.
+
+The application does not provide financial, medical, legal, or insurance advice.
