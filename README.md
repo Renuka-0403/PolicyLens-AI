@@ -1,47 +1,35 @@
 # PolicyLens AI
 
-OCR-Powered Insurance Policy Analyzer and Comparison Assistant
+## OCR-Powered Insurance Policy Analyzer and Comparison Assistant
 
 ## Overview
 
 PolicyLens AI is an OCR-based application that extracts important information from insurance policy documents and presents it in a simple and understandable format.
 
-The application uses Optical Character Recognition (OCR) to read text from insurance policy PDFs and images. It identifies important policy details such as insurance company, policy number, premium, GST, sum insured, policy period, benefits, entry age, and family coverage.
+The application uses Optical Character Recognition (OCR) to read text from insurance policy PDFs and images. It identifies important policy details such as insurance company, product name, policy number, premium, GST, total premium, sum insured, policy period, eligibility, family coverage, benefits and other relevant information.
 
-Users can also ask questions about an uploaded policy and compare multiple insurance policies.
-
-## Problem Statement
-
-Insurance policy documents are often lengthy and difficult to understand. Important information such as premium amounts, coverage, policy periods, benefits, eligibility details, and exclusions may be spread across different sections of the document.
-
-PolicyLens AI helps users quickly extract and understand important information without manually reading the entire document.
-
-## Objectives
-
-* Extract text from insurance policy PDFs and images using OCR
-* Identify important policy information automatically
-* Present extracted information in a structured format
-* Allow users to ask questions about their policy
-* Compare two or three insurance policies
-* Provide a simple and easy-to-use interface
-* Reduce the time required to find important information in insurance documents
+Users can also ask questions about an uploaded policy and compare multiple insurance policies side by side.
 
 ## Key Features
 
-### 1. Insurance Policy OCR
+* Upload insurance policy PDFs and images
+* OCR-based text extraction using Tesseract
+* Automatic extraction of important policy information
+* Insurance company and product identification
+* Policy number extraction
+* Premium, GST and total premium detection
+* Sum insured and policy period detection
+* Entry age and family coverage analysis
+* Insurance benefit extraction
+* Rule-based policy question answering
+* Compare up to three insurance policies
+* View complete extracted OCR text
+* Simple and user-friendly dashboard
+* Supports multiple policy documents
 
-Users can upload:
+## Information Extracted
 
-* PDF documents
-* PNG images
-* JPG images
-* JPEG images
-
-The application processes the document using OCR and extracts the available text.
-
-### 2. Policy Information Extraction
-
-PolicyLens AI extracts important information such as:
+PolicyLens AI can identify information such as:
 
 * Insurance Company
 * Product Name
@@ -52,288 +40,175 @@ PolicyLens AI extracts important information such as:
 * Total Premium
 * Base Sum Insured
 * Policy Period
-* Bonus
 * Minimum Entry Age
 * Maximum Entry Age
 * Child Entry Age
 * Family Adults
 * Dependent Children
-
-### 3. Important Benefits
-
-The application can identify policy benefits such as:
-
 * Secure Benefit
 * Plus Benefit
 * Automatic Restore Benefit
 * Protect Benefit
 * Global Cover
-
-### 4. Ask Your Policy
-
-Users can ask questions about the uploaded policy.
-
-Example questions:
-
-* What is the premium?
-* What is the total premium?
-* What is the policy period?
-* What is the sum insured?
-* What is the insurance company?
-* What are the benefits?
-* What is the GST?
-* What is the minimum entry age?
-* What is the maximum entry age?
-* What are the exclusions?
-* What is the claim process?
-
-The application searches the extracted OCR text and structured policy information to provide a relevant answer.
-
-### 5. Policy Comparison
-
-Users can upload two or three insurance policies.
-
-PolicyLens AI compares important features such as:
-
-* Insurance Company
-* Product Name
-* Premium
-* GST
-* Total Premium
-* Sum Insured
-* Policy Period
-* Benefits
-* Entry Age
-* Family Coverage
 * Bonus
 
-The comparison is displayed in a table for easy understanding.
-
-### 6. OCR Text Viewer
-
-Users can view the complete text extracted from their uploaded policy document.
-
-This allows users to verify the information extracted by the application against the original document.
-
-## Project Structure
-
-```text
-PolicyLens_Ai/
-│
-├── app.py
-├── ocr.py
-├── analyzer.py
-├── question_answer.py
-├── comparison.py
-├── requirements.txt
-└── README.md
-```
-
-### app.py
-
-Main Streamlit application.
-
-It provides:
-
-* File upload
-* Policy summary
-* Important information
-* Question answering
-* Policy comparison
-* OCR text viewer
-
-### ocr.py
-
-Handles OCR processing.
-
-It:
-
-* Reads images
-* Reads PDF pages
-* Preprocesses images
-* Extracts text using Tesseract OCR
-
-### analyzer.py
-
-Analyzes the extracted OCR text and identifies important insurance policy fields.
-
-### question_answer.py
-
-Processes user questions and searches the extracted policy information and OCR text for relevant answers.
-
-### comparison.py
-
-Compares information extracted from two or three uploaded insurance policies.
-
-### requirements.txt
-
-Contains the Python packages required to run the application.
-
-## Installation
-
-### Step 1: Install Python
-
-Install Python 3.9 or later.
-
-Verify the installation:
-
-```bash
-python --version
-```
-
-### Step 2: Install Tesseract OCR
-
-Install Tesseract OCR on Windows.
-
-The application is configured to use:
-
-```text
-C:\Program Files\Tesseract-OCR\tesseract.exe
-```
-
-If Tesseract is installed in another location, update the Tesseract path in `ocr.py`.
-
-### Step 3: Clone the Repository
-
-```bash
-git clone <your-repository-url>
-```
-
-Move into the project folder:
-
-```bash
-cd PolicyLens_Ai
-```
-
-### Step 4: Install Python Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### Step 5: Run the Application
-
-```bash
-python -m streamlit run app.py
-```
-
-The application will open in the browser.
-
-## How to Use
-
-### Step 1
-
-Open PolicyLens AI.
-
-### Step 2
-
-Upload an insurance policy PDF or image.
-
-### Step 3
-
-Wait for OCR processing to complete.
-
-### Step 4
-
-View the extracted policy information under **Policy Summary**.
-
-### Step 5
-
-Open **Important Information** to view major policy benefits.
-
-### Step 6
-
-Use **Ask Your Policy** to ask questions about the uploaded policy.
-
-### Step 7
-
-Upload two or three policies to use the **Compare Policies** feature.
-
-### Step 8
-
-Open **View Extracted OCR Text** to verify the original OCR output.
-
-## Workflow
+## How It Works
 
 ```text
 Insurance Policy PDF/Image
           |
           v
-    Image Processing
+      OCR Processing
           |
           v
-      Tesseract OCR
+    Text Extraction
           |
           v
-   Extracted Policy Text
+   Rule-Based Analysis
           |
           v
- Policy Information Extraction
+   Important Information
           |
-          +-------------------+
-          |                   |
-          v                   v
-   Policy Summary       Ask Your Policy
-          |
-          v
-   Policy Comparison
+          +------------------+
+          |                  |
+          v                  v
+    Ask Questions      Compare Policies
 ```
+
+## Technology Stack
+
+* Python
+* Streamlit
+* Tesseract OCR
+* PyTesseract
+* Pillow
+* PyMuPDF
+* Regular Expressions
+* Python DateUtil
+
+## File Description
+
+### app.py
+
+Main Streamlit application that provides the user interface for:
+
+* Uploading policy documents
+* Viewing extracted information
+* Asking policy-related questions
+* Comparing policies
+* Viewing OCR text
+
+### ocr.py
+
+Handles OCR processing for:
+
+* PDF documents
+* PNG images
+* JPG images
+* JPEG images
+
+It preprocesses images before sending them to Tesseract OCR to improve text extraction.
+
+### analyzer.py
+
+Analyzes the extracted OCR text using rule-based patterns and regular expressions to identify important insurance policy fields.
+
+### question_answer.py
+
+Provides simple rule-based question answering. It matches the user's question with relevant policy fields or searches the extracted OCR text for relevant information.
+
+### comparison.py
+
+Compares important fields from two or three uploaded insurance policies and displays the results in a comparison table.
+
+### requirements.txt
+
+Contains the Python packages required to run the application.
+
+## Usage
+
+### Single Policy Analysis
+
+1. Upload an insurance policy PDF or image.
+2. PolicyLens AI processes the document using OCR.
+3. Extracted information is analyzed automatically.
+4. View important policy details on the dashboard.
+5. Ask questions about the policy.
+6. View the complete OCR text.
+
+### Policy Comparison
+
+1. Upload two or three insurance policy documents.
+2. PolicyLens AI extracts information from each document.
+3. Open the **Compare Policies** section.
+4. View important policy features side by side.
+
+## Example Questions
+
+Users can ask questions such as:
+
+```text
+What is the premium?
+What is the total premium?
+What is the coverage amount?
+What is the policy period?
+What is the insurance company?
+What is the policy number?
+What is the minimum age?
+What is the maximum age?
+What is the child entry age?
+What are the benefits?
+What are the exclusions?
+What is the claim process?
+What documents are required?
+What is the bonus?
+```
+
+## Supported Documents
+
+PolicyLens AI is designed for insurance-related documents such as:
+
+* Health Insurance Policies
+* Life Insurance Policies
+* Insurance Policy Schedules
+* Policy Certificates
+* Insurance Documents
+* Other OCR-readable insurance documents
+
+The accuracy depends on the quality, resolution and readability of the uploaded document.
 
 ## Advantages
 
-* Easy to use
-* Supports PDF and image documents
-* Reduces manual reading effort
-* Extracts important information automatically
-* Allows comparison of multiple policies
-* Provides question-based access to policy information
-* Displays the original OCR text for verification
-* Useful for understanding lengthy insurance documents
+* Reduces the need to manually search through lengthy policy documents
+* Converts difficult-to-read policy documents into structured information
+* Provides quick access to important policy details
+* Makes policy comparison easier
+* Uses explainable rule-based analysis
+* Works with scanned documents and images through OCR
+* Provides a simple interface for users without technical knowledge
 
 ## Limitations
 
-* OCR accuracy depends on the quality of the uploaded document.
-* Blurry, low-resolution, handwritten, or heavily distorted documents may produce incorrect text.
-* Some complex tables may not be extracted correctly.
-* Information may be shown as "Not detected" when the required text is unclear or missing.
-* Different insurance companies may use different document formats and terminology.
-* The application is intended as an information extraction and comparison tool and should not replace official policy documents or professional insurance advice.
+* OCR accuracy depends on document quality
+* Poorly scanned or handwritten documents may produce incorrect text
+* Some policy formats may require additional extraction rules
+* The system does not replace professional insurance or financial advice
 
 ## Future Enhancements
 
-Possible future improvements include:
-
-* Better OCR accuracy for complex tables
-* Support for more insurance companies and policy formats
-* Automatic detection of exclusions
-* Key date extraction
-* Required document checklist
-* OCR confidence scoring
-* Page-level source references
+* Improved OCR accuracy for complex policy layouts
+* Support for more insurance document formats
+* Better extraction of exclusions and claim conditions
+* Policy renewal and expiry alerts
 * Downloadable policy analysis reports
-* Improved natural-language question answering
-* Multi-language insurance document support
-* Advanced policy recommendation and comparison
+* Visual comparison of policy benefits
+* Improved question understanding
+* Policy recommendation based on user-selected requirements
 
-## Use Cases
+## Project Goal
 
-PolicyLens AI can be useful for:
+The goal of PolicyLens AI is to make insurance documents easier to understand by combining OCR-based document processing with structured rule-based analysis and policy comparison.
 
-* Individual policyholders
-* Families comparing health insurance plans
-* Insurance document analysis
-* Students learning document AI
-* Insurance-related administrative work
-* Quickly locating important information in lengthy policy documents
+## License
 
-## Conclusion
-
-PolicyLens AI demonstrates how OCR and rule-based text analysis can be used to transform lengthy insurance documents into structured and understandable information.
-
-By combining document OCR, information extraction, question answering, and policy comparison, the application provides a practical approach to simplifying insurance policy analysis.
-
-## Disclaimer
-
-PolicyLens AI is an educational and informational project. The extracted information depends on OCR accuracy and should always be verified against the original insurance policy document.
-
-The application does not provide financial, medical, legal, or insurance advice.
+This project is developed for educational and project demonstration purposes.
